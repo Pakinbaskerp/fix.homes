@@ -1,15 +1,12 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography } from '@mui/material';
-import Logo from '../logo.svg'
+import { AppBar, Toolbar } from '@mui/material';
+import Logo from '../FIXs.png';
 
 const Header = () => {
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#9c27b0' }}>
-      <Toolbar>
-        <img src={Logo} alt="Logo" style={{ width: 40, marginRight: 10 }} />
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          My App
-        </Typography>
+    <AppBar position="static" sx={{ backgroundColor: 'rgb(244, 210, 82)' }}>
+      <Toolbar sx={{ justifyContent: 'center' }}>
+        <img src={Logo} alt="Logo" style={{ width: 200, height: 80 }} />
       </Toolbar>
     </AppBar>
   );

@@ -1,7 +1,19 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import logo from '../logo.svg'; // Importing the logo image
+import { useInView } from 'react-intersection-observer';
+
+import Hero0 from '../images/hero0.jpeg';
+import Hero1 from '../images/hero1.jpg';
+import Hero2 from '../images/hero2.jpeg';
+import Hero3 from '../images/hero3.jpeg';
+
+const images = [
+  { src: Hero0, alt: 'Stage decoration', text: 'Stage decoration' },
+  { src: Hero1, alt: 'Drums', text: 'Drums' },
+  { src: Hero2, alt: 'Name 3', text: 'Name 3' },
+  { src: Hero3, alt: 'Name 4', text: 'Name 4' },
+];
 
 export default function SimplePaper() {
   return (
@@ -14,30 +26,45 @@ export default function SimplePaper() {
         '& > :not(style)': {
           m: 1,
           width: 128,
-          height: 120, 
+          height: 70,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          position: 'relative', 
+          position: 'relative',
+          overflow: 'hidden',
         },
       }}
     >
-      <Paper elevation={3}>
-        <img src={logo} alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        <p style={{ position: 'absolute', bottom: 0, left: 0, right: 0, textAlign: 'center', margin: 0 }}>Name 1</p>
-      </Paper>
-      <Paper elevation={3}>
-        <img src={logo} alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        <p style={{ position: 'absolute', bottom: 0, left: 0, right: 0, textAlign: 'center', margin: 0 }}>Name 2</p>
-      </Paper>
-      <Paper elevation={3}>
-        <img src={logo} alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        <p style={{ position: 'absolute', bottom: 0, left: 0, right: 0, textAlign: 'center', margin: 0 }}>Name 3</p>
-      </Paper>
-      <Paper elevation={3}>
-        <img src={logo} alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        <p style={{ position: 'absolute', bottom: 0, left: 0, right: 0, textAlign: 'center', margin: 0 }}>Name 4</p>
-      </Paper>
+      {images.map((image, index) => (
+        <LazyImage key={index} src={image.src} alt={image.alt} text={image.text} />
+      ))}
     </Box>
   );
 }
+
+const LazyImage = ({ src, alt, text }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <Paper elevation={3} ref={ref}>
+      {inView && <img src={src} alt={alt} style={{ width: '100%', height: '80%', objectFit: 'cover' }} />}
+      <p
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          textAlign: 'center',
+          margin: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          color: 'white',
+        }}
+      >
+        {text}
+      </p>
+    </Paper>
+  );
+};

@@ -1,0 +1,74 @@
+/* CarouselComponent.css */
+.carousel {
+  position: relative;
+}
+
+.carousel-container {
+  margin-top: 20px; /* Adjust this value to set the desired gap */
+  text-align: center; /* Center the images horizontally */
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-logo {
+  width: 90%;
+  height: 600px; /* Set this to the height you want for your container on desktop */
+  display: block;
+  margin: 0 auto; /* Center the images horizontally */
+  object-fit: cover;
+  object-position: center; /* Ensure the image covers the entire container on desktop */
+  border-radius: 1%;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(17, 12, 12, 0.5); 
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.overlay-text h1 {
+  margin: 10;
+  font-size: 2rem; 
+}
+
+.overlay-text p {
+  margin: 10;
+  font-size: 1rem; 
+}
+
+@media (max-width: 768px) {
+  .carousel-logo {
+    width: 90vw;
+    height: 30vh; /* Adjust this value to set the reduced height on mobile */
+    object-fit: cover; /* Ensure the image covers the entire container on mobile */
+    object-position: center; /* Center the image */
+    border-radius: 10%;
+  }
+  
+  .overlay-text {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(17, 12, 12, 0.7); 
+    padding: 5px;
+  }
+
+  .overlay-text h1 {
+    font-size: 0.8rem;
+  }
+
+  .overlay-text p {
+    font-size: 0.8rem;
+  }
+}
