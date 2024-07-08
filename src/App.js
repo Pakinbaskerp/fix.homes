@@ -6,6 +6,7 @@ import CarouselComponent from './components/CarouselComponent';
 import AboutSection from './components/Experience';
 import OurPromise from './components/OurPromises';
 import ServicesSection from './components/OurServices';
+import CallToAction from './components/CallToAction'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <div className="App">
       <OurPromise />
     </div>
+    <CallToAction/>
       <LabelBottom />
     </div>
   );
