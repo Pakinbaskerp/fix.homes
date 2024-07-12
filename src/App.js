@@ -25,7 +25,10 @@ function App() {
       <div className="App">
       <OurPromise />
     </div>
+    <div className="App">
     <CallToAction/>
+    </div>
+    
       <LabelBottom />
     </div>
   );

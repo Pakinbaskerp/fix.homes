@@ -17,7 +17,7 @@
   
   .popup-content {
     background: white;
-    padding: 20px;
+    padding: 40px;
     border-radius: 5px;
     position: relative;
     width: 80%;
@@ -26,9 +26,9 @@
   
   .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
+    top: 5px;
+    right: 20px;
+    font-size: 40px;
     cursor: pointer;
   }
   
@@ -54,8 +54,8 @@
     text-align: center;
     vertical-align: middle;
     user-select: none;
-    background-color: #007bff;
-    border: 1px solid #007bff;
+    background-color: rgb(244, 210, 82);
+    /* border: 1px solid #007bff; */
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -65,7 +65,7 @@
   
   .btn-primary {
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: rgb(244, 210, 82);
+    /* border-color: #0d0d0e; */
   }
   

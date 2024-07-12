@@ -29,7 +29,7 @@ const CallToAction = () => {
           </div>
         </div>
         <div className="py-5">
-          <button className='btn btn-dark fs-xl w-100 h-1 mb-1' onClick={togglePopup} style={{ position: 'relative' }}>
+          <button className='btn btn-dark fs-xl w-100 h-1 ' onClick={togglePopup} style={{ position: 'relative' }}>
             Make a free Call
           </button>
         </div>
